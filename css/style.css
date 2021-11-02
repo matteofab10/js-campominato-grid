@@ -1,0 +1,26 @@
+body {
+  height: 100vh;
+}
+
+header {
+  height: 70px;
+  background-color: white;
+}
+
+.mf-box {
+  width: 10%;
+}
+
+.mf-box img {
+  width: 100%;
+}
+
+main {
+  height: 500px;
+  background-color: #7ffed4;
+}
+
+footer {
+  height: 40px;
+  background-color: white;
+}
