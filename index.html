@@ -17,9 +17,17 @@
           <div class="mf-box me-3">
             <img src="css/img/logo-boolean.png" alt="logo-boolean">
           </div>
-          <h1>Campo Minato</h1>
+          <h1 class="fw-bold">Campo Minato</h1>
         </div>
-        <div class="col text-end">B</div>
+        <div class="col text-end">
+          <span>Difficoltà:</span>
+          <select name="selector" id="difficolta">
+            <option value="facile">Easy</option>
+            <option value="medio">Hard</option>
+            <option value="difficile">Crazy</option>
+          </select>
+          <button id="inizia">Play</button>
+        </div>
       </div>
     </div>  
   </header>
@@ -29,6 +37,7 @@
       <div class="row">
         <div class="col">
           <h2 class="fs-4">Seleziona il livello di difficoltà e genera la griglia</h2>
+          <div id="mf-container"></div>
         </div>
       </div>
     </div>
