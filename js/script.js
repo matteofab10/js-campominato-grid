@@ -1,53 +1,45 @@
-const container = document.querySelector('#mf-container');
+const container = document.getElementById('mf-container');
 const listNumbers = [];
+const inizia = document.getElementById('inizia');
+let difficolta = document.getElementById('difficolta');
 
-document.getElementById('inizia').addEventListener('click', function() {
-  console.log('ho cliccato play');
-
-  let select = document.getElementById('difficolta');
-  let difficolta = document.getElementById("difficolta").value = "facile";
-
-  if (difficolta === facile)
-  
-    // 1. partiamo da quello che abbiamo vsito stamattina e rifacciamolo. funionznante.
-
-  // 2. siccome il codice ha  un numero di quadrati FISSO, dobbiamo fare in modo che
-  // questl numero vari in base AL VALORE DELLA SELECT
-
-  // come si legge il valore della select? google 
-
-  // valore letto ad esempio = 'medio'
-
-  let numeroCaselle = 100;
-
-  // leggo il valore della select
+inizia.addEventListener("click",function(){
+  console.log(difficolta.value);
+  container.innerHTML = "";
+  let numeroCaselle = 0;
+  if(difficolta.value == "facile"){
+    numeroCaselle = 100;
+    console.log("ho cliccato easy", numeroCaselle);
+  } else if(difficolta.value == "medio"){
+    numeroCaselle = 81;
+    console.log("ho cliccato hard", numeroCaselle);
+  } else {
+    numeroCaselle = 49;
+    console.log("ho cliccato crazy", numeroCaselle);
+  }; 
 
 
+  init(numeroCaselle);
+})
 
-  // devo creare 100 caselle
-  for (let i=0; i < numeroCaselle; i++){
-    //const sq = createSquare(container);
 
-    // creo la casella
+  function createSquare(target){
     const sq = document.createElement('div');
-    sq.className = 'square';
-    sq.innerHTML = i;
-
-    // la aggiungo al contenitore
-    container.append(sq);    
-  
-    sq.addEventListener('click', function(){
-
-    });
-  }
-  
-  /*
-  function createSquare(contenitoreQuadrati){
-    const sq = document.createElement('div');
-    sq.className = 'square';
-    contenitoreQuadrati.append(sq);
+    sq.classList.add("square");
+    if(difficolta.value == "facile"){
+      sq.classList.add("easy");
+    } else if(difficolta.value == "medio"){
+      sq.classList.add("hard");
+    } else{
+      sq.classList.add("crazy");
+    }
+    target.append(sq);
     return sq;
   }
-  */
 
-});
+  function init(totaleCaselle){
+    for(let i = 0; i < totaleCaselle; i++){
+      const sq = createSquare(container);
+      sq.innerHTML = i + 1;
+    }
+  }   
